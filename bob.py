@@ -1,5 +1,5 @@
 from functools import reduce
-from random import choice
+from random import choices
 
 
 class ImportedStrat(GameStrategy):
@@ -16,7 +16,7 @@ class ImportedStrat(GameStrategy):
         share_weight = sum(opponent_history)
         steal_weight = len(opponent_history) - share_weight
 
-        return choice([GameMove.SHARE, GameMove.STEAL], (share_weight, steal_weight))
+        return choices([GameMove.SHARE, GameMove.STEAL], (share_weight, steal_weight + 1))
 
 
 # This line is required!
