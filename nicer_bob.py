@@ -16,7 +16,7 @@ class ImportedStrat(GameStrategy):
         share_weight = sum(opponent_history)
         steal_weight = len(opponent_history) - share_weight
 
-        return choices([GameMove.SHARE, GameMove.STEAL], (share_weight + 1, steal_weight))
+        return choices([GameMove.SHARE, GameMove.STEAL], (share_weight + 1, steal_weight))[0]
 
 
 # This line is required!
