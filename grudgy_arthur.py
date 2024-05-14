@@ -11,7 +11,7 @@ class ImportedStrat(GameStrategy):
         :param opponent_history: List of the opponent's moves
         :return: Your next move
         """
-        if len(opponent_history) < 1:
+        if len(opponent_history) > 0:
             return GameMove.STEAL if (sum(opponent_history) / len(opponent_history)) < 0.5 else random.choices([GameMove.SHARE, GameMove.STEAL], weights=(2, 1), k=1)[0]
         else:
             return GameMove.SHARE
