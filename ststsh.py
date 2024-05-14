@@ -14,6 +14,5 @@ class ImportedStrat(GameStrategy):
         self.n += 1
         return GameMove.SHARE if self.n % 3 == 0 else GameMove.STEAL
 
-
 # This line is required!
 userGame = ImportedStrat()

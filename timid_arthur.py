@@ -1,6 +1,5 @@
 import random
 
-
 class ImportedStrat(GameStrategy):
     def __init__(self) -> None:
         super().__init__(name="Timid Arthur", author="Nobu", description="")

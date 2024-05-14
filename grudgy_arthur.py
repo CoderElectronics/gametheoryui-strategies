@@ -12,7 +12,7 @@ class ImportedStrat(GameStrategy):
         :return: Your next move
         """
         if len(opponent_history) > 0:
-            return GameMove.STEAL if (sum(opponent_history) / len(opponent_history)) < 0.5 else random.choices([GameMove.SHARE, GameMove.STEAL], weights=(2, 1), k=1)[0]
+            return GameMove.STEAL if (sum([i.value for i in opponent_history]) / len(opponent_history)) < 0.5 else random.choices([GameMove.SHARE, GameMove.STEAL], weights=(2, 1), k=1)[0]
         else:
             return GameMove.SHARE
 
