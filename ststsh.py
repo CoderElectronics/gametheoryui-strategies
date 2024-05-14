@@ -1,6 +1,6 @@
 class ImportedStrat(GameStrategy):
     def __init__(self) -> None:
-        super().__init__(name="Timid Arthur", author="Nobu", description="")
+        super().__init__(name="STSTSH", author="Nobu", description="")
         self.n = -1
 
     def next_play(
