@@ -1,7 +1,8 @@
 from game_class import GameStrategy
-
+import numpy as np
 
 class ImportedStrat(GameStrategy):
+    global np
     def __init__(self) -> None:
         super().__init__(name="Whatever", author="Shivam", description="it's just whatever.")
         # import numpy as np
@@ -26,7 +27,7 @@ class ImportedStrat(GameStrategy):
         :param opponent_history: List of the opponent's moves
         :return: Your next move
         """
-        import numpy as np
+
         # from collections import defaultdict
         state = self.get_state(player_history, opponent_history)
         if np.random.uniform(0, 1) < self.epsilon:
@@ -42,6 +43,7 @@ class ImportedStrat(GameStrategy):
         :param player_history: List of your moves
         :param opponent_history: List of the opponent's moves
         """
+
         old_state = self.get_state(player_history[:-1], opponent_history[:-1])
         new_state = self.get_state(player_history, opponent_history)
         old_value = self.q_table[old_state][player_history[-1]]
