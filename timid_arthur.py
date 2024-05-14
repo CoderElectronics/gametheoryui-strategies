@@ -22,7 +22,7 @@ class ImportedStrat(GameStrategy):
         return (
             GameMove.STEAL
             if (sum([i.value for i in opponent_history]) / his) < 0.5
-            else choices([GameMove.SHARE, GameMove.STEAL], (3, 1))
+            else random.choices([GameMove.SHARE, GameMove.STEAL], (3, 1))[0]
         )
 
 
