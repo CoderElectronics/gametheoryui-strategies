@@ -17,7 +17,7 @@ class ImportedStrat(GameStrategy):
         elif len(opponent_history) == 1:
             # B. If opponent’s first choice is a steal, then split.
             # C. If opponent’s first choice is a split, then steal.
-            self.last_move = GameMove.SPLIT if opponent_history[0] == GameMove.STEAL else GameMove.STEAL
+            self.last_move = GameMove.SHARE if opponent_history[0] == GameMove.STEAL else GameMove.STEAL
         else:
             # D. Assume chosen action is steal unless following steps happen.
             self.last_move = GameMove.STEAL
