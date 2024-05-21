@@ -1,6 +1,5 @@
 from game_class import GameStrategy, GameMove
 
-
 class SocialCreditStrategy(GameStrategy):
     def __init__(self) -> None:
         super().__init__(name='Social Credit',
@@ -19,8 +18,9 @@ class SocialCreditStrategy(GameStrategy):
 
         self.mean_steal_threshold = 0
         import numpy as np
-        self.steal_risk_factor = lambda: np.random.uniform(0.2, 0.35)  # 0.2  # 0-1: 0 = always be cautious (STEAL), 1 = always be risky (SHARE)
-        self.share_risk_factor = lambda: np.random.uniform(0.2, 0.35)  # 0.2  # 0-1: 0 = always be cautious (STEAL), 1 = always be risky (SHARE)
+
+        self.steal_risk_factor = lambda: np.random.uniform(0.0, 0.35)  # 0.2  # 0-1: 0 = always be cautious (STEAL), 1 = always be risky (SHARE)
+        self.share_risk_factor = lambda: np.random.uniform(0.1, 0.2)  # 0.2  # 0-1: 0 = always be cautious (SHARE), 1 = always be risky (STEAL)
 
     def next_play(self, player_history: list[GameMove], opponent_history: list[GameMove]) -> GameMove:
         """
